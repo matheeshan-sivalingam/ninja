@@ -1,0 +1,40 @@
+{
+  "name": "ninja",
+  "version": "1.0.0",
+  "description": "<img src=\"/assets/main-menu-1600x800.png\" width=\"400\"> <img src=\"/assets/gameplay-1-1600x800.png\" width=\"400\">",
+  "main": "build.js",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/plugin-transform-modules-commonjs": "^7.17.7",
+    "@babel/preset-env": "^7.16.11",
+    "@types/jest": "^27.4.1",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.4"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "transform": {
+      "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!variables/.*)"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheeshan-sivalingam/ninja.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matheeshan-sivalingam/ninja/issues"
+  },
+  "homepage": "https://github.com/matheeshan-sivalingam/ninja#readme"
+}

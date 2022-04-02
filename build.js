@@ -95,7 +95,7 @@ compiler.run((tasks) => {
             tasks.zip('index.html'),
             tasks.output(__dirname + '/build/game.zip'),
             tasks.checkSize(__dirname + '/build/game.zip'),
-            tasks.advzip(__dirname + '/build/game.zip'),
+            //tasks.advzip(__dirname + '/build/game.zip'), Not neccessary if running on windows
             tasks.checkSize(__dirname + '/build/game.zip'),
         ]);
     }

@@ -645,49 +645,5 @@ it('Player y value should be calculated corectly when jumping off wall', () => {
     expect(testPlayer.y).toBeCloseTo(120)
 })
 
-//TC21:- Player y value should be calculated corectly when jumping off wall
-it('Player y value should be calculated corectly when jumping off wall', () => {
-    global.Math.random = () => 3;
-    //Define player
-    const testPlayer = new Player(1,1,80);
-
-    PLAYER_RADIUS = Constants.PLAYER_RADIUS;
-    LEVEL_WIDTH = 10;
-    LEVEL_HEIGHT = 10;
-    GRAVITY_ACCELERATION = Constants.GRAVITY_ACCELERATION;
-    PLAYER_HORIZONTAL_FLIGHT_ACCELERATION = Constants.PLAYER_HORIZONTAL_FLIGHT_ACCELERATION
-    PLAYER_HORIZONTAL_FLOOR_ACCELERATION = Constants.PLAYER_HORIZONTAL_FLOOR_ACCELERATION
-    MAX_JUMP_HOLD_TIME = Constants.MAX_JUMP_HOLD_TIME
-
-    CELL_SIZE = Constants.CELL_SIZE
-
-    INPUT = {
-        'jump': () => false,
-        'left': () => false,
-        'right': () => false,
-    };
-    
-    hasBlock = (x, y, radius = 0) => {
-        return true
-    }
-
-    var i = 0;
-    jumpSound = () => {
-        i++;
-    }
-
-    easeOutQuad = t => t * (2 - t);
-
-    
-    subCycle = () => {
-        i++;
-    }
-
-    jest.spyOn(testPlayer,'cycle');
-
-    testPlayer.cycle(3);
-
-    expect(i).toBe(3)
-})
 
 

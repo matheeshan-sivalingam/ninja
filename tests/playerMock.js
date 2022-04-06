@@ -45,7 +45,7 @@ class Player {
         }
 
         // If the user hasn't landed recently, don't let us jump
-        if (dist(this, this.lastLanded) > COYOTE_RADIUS && abs(this.x - this.lastWallStick.x) > COYOTE_RADIUS_WALLJUMP) {
+        if (dist(this, this.lastLanded) > COYOTE_RADIUS && Math.abs(this.x - this.lastWallStick.x) > COYOTE_RADIUS_WALLJUMP) {
             return false;
         }
 
@@ -63,9 +63,7 @@ class Player {
             remaining -= sub;
             this.subCycle(sub);
         } while (remaining > 0);
-
     }
-
 
     subCycle(e) {
         // Save the previous state
@@ -80,6 +78,7 @@ class Player {
 
         const holdingJump = INPUT.jump();
         this.jumpReleased = this.jumpReleased || !holdingJump;
+        
 
         if (holdingJump) {
             this.jumpHoldTime += e;
@@ -104,13 +103,14 @@ class Player {
         }
 
         if (holdingJump && !this.jumpReleased) {
-            const jumpHoldRatio = min(this.jumpHoldTime, MAX_JUMP_HOLD_TIME) / MAX_JUMP_HOLD_TIME;
-            const steppedRatio = max(0.33, roundToNearest(jumpHoldRatio, 0.33));
+            const jumpHoldRatio = Math.min(this.jumpHoldTime, MAX_JUMP_HOLD_TIME) / MAX_JUMP_HOLD_TIME;
+            const steppedRatio = Math.max(0.33, roundToNearest(jumpHoldRatio, 0.33));
             const height = CELL_SIZE / 2 + steppedRatio * CELL_SIZE * 3;
+
+
 
             this.jumpPeakTime = 0.1 + 0.2 * steppedRatio;
             this.jumpEndY = this.jumpStartY - height;
-
         }
 
         if (this.isRising) {
@@ -118,19 +118,16 @@ class Player {
             const jumpRatio = (this.clock - this.jumpStartTime) / this.jumpPeakTime;
             this.y = easeOutQuad(jumpRatio) * (this.jumpEndY - this.jumpStartY) + this.jumpStartY;
         } else {
-           
             // Fall down
             const gravity = this.sticksToWall && this.vY > 0 ? WALL_GRAVITY_ACCELERATION : GRAVITY_ACCELERATION;
-            this.vY = max(0, this.vY + gravity * e);
+            this.vY = Math.max(0, this.vY + gravity * e);
+
             if (this.sticksToWall) {
-                this.vY = min(this.vY, WALL_FALL_DOWN_CAP);
-                console.log("vY wallstick - "+this.vY);
-                console.log("JST - "+this.jumpStartTime);
-                console.log("JPT - "+this.jumpPeakTime);
-                console.log("Clock -"+this.clock)
-                console.log("e - "+e);
+                this.vY = Math.min(this.vY, WALL_FALL_DOWN_CAP);
             }
+
             console.log(this.vY);
+
             this.y += this.vY * e;
         }
 
@@ -174,7 +171,7 @@ class Player {
         // Bandana
         const newTrail = this.bandanaTrail.length > 100 ? this.bandanaTrail.pop() : {};
         newTrail.x = this.x - this.facing * 5;
-        newTrail.y = this.y - 10 + rnd(-3, 3) * sign(this.vX);
+        newTrail.y = this.y - 10 + rnd(-3, 3) * Math.sign(this.vX);
         this.bandanaTrail.unshift(newTrail);
 
         // Trail
@@ -289,7 +286,7 @@ class Player {
         for (let i = 0 ; i < 100 ; i++) {
             this.level.particle({
                 'size': [10, -10],
-                'color': '#100',
+                'color': '#000',
                 'duration': rnd(1, 2),
                 'x': [this.x + rnd(-PLAYER_RADIUS, PLAYER_RADIUS) * 1.5, rnd(-20, 20)],
                 'y': [this.y + rnd(-PLAYER_RADIUS, PLAYER_RADIUS) * 1.5, rnd(-20, 20)]
@@ -306,7 +303,7 @@ class Player {
 
         if (this.landed) {
             // Landed, reset the jump
-            this.vY = min(0, this.vY);
+            this.vY = Math.min(0, this.vY);
 
             if (!this.previous.landed) {
                 this.dust(this.y + PLAYER_RADIUS);
@@ -321,10 +318,10 @@ class Player {
         }
 
         const hitWall = this.x != x;
-        const adjustmentDirectionX = sign(this.x - x)
+        const adjustmentDirectionX = Math.sign(this.x - x)
 
         // Player hit a wall in the face, reset horizontal momentum
-        if (hitWall && adjustmentDirectionX != sign(this.vX)) {
+        if (hitWall && adjustmentDirectionX != Math.sign(this.vX)) {
             this.vX = 0;
         }
 
@@ -376,3 +373,4 @@ class Player {
     }
 }
 
+module.exports = Player;

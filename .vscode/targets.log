@@ -8,7 +8,7 @@ make.exe: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Apr 02 15:59:33 2022
+# Make data base, printed on Wed Apr 06 13:31:56 2022
 
 # Variables
 
@@ -59,11 +59,11 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-c92f639d-fb31-475e-be44-2fbbf41ad333-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-3415d730-64b6-4271-9bd4-1424d324126f-sock
 # environment
 VS160ENTCOMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\
 # environment
-VSCODE_CWD = C:\Users\Matheeshan\AppData\Local\GitHubDesktop\app-2.9.12
+VSCODE_CWD = C:\Users\Matheeshan\AppData\Local\Programs\Microsoft VS Code
 # default
 MAKE_HOST := Windows32
 # environment
@@ -72,8 +72,6 @@ PATH = C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
 NIEXTCCOMPILERSUPP = C:\Program Files (x86)\National Instruments\Shared\ExternalCompilerSupport\C\
-# environment
-LC_ALL = C
 # environment
 CHOCOLATEYLASTPATHUPDATE = 132501227852233544
 # environment
@@ -95,7 +93,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_5196_NIGAQUYJQTFDIOYR
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11792_YYDMHCAEMHAYTYFI
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -116,8 +114,6 @@ PUBLIC = C:\Users\Public
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 PT6HOME = C:\Program Files (x86)\Cisco Packet Tracer 6.1sv
-# environment
-VSCODE_CLI = 1
 # environment
 VSCODE_CODE_CACHE_PATH = C:\Users\Matheeshan\AppData\Roaming\Code\CachedData\e18005f0f1b33c29e81d732535d8c0e47cafb0b5
 # environment
@@ -140,8 +136,6 @@ MAKELEVEL := 0
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
-# environment
-LOCAL_GIT_DIRECTORY = C:\Users\Matheeshan\AppData\Local\GitHubDesktop\app-2.9.12\resources\app\git
 # environment
 XILINX = c:\Xilinx
 # environment
@@ -191,8 +185,6 @@ SYSTEMROOT = C:\WINDOWS
 # environment
 APPDATA = C:\Users\Matheeshan\AppData\Roaming
 # environment
-__COMPAT_LAYER = DetectorsAppHealth
-# environment
 TEMP = C:\Users\MATHEE~1\AppData\Local\Temp
 # environment
 COMSPEC = C:\WINDOWS\system32\cmd.exe
@@ -203,7 +195,7 @@ MAKEFILES :=
 # environment
 LMC_HOME = c:\Xilinx\smartmodel\nt\installed_nt
 # environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
+LC_ALL = C
 # automatic
 ^F = $(notdir $^)
 # default
@@ -223,11 +215,11 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-VSCODE_PID = 5196
+VSCODE_PID = 11792
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-L1EQSIM
 # variable set hash-table stats:
-# Load=107/1024=10%, Rehash=0, Collisions=17/129=13%
+# Load=103/1024=10%, Rehash=0, Collisions=15/125=12%
 
 # Pattern-specific Variable Values
 
@@ -235,9 +227,9 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-L1EQSIM
 
 # Directories
 
-# . (key d:/Projects/ninja, mtime 1648929033): 18 files, no impossibilities.
+# . (key d:/Projects/ninja, mtime 1649219835): 21 files, no impossibilities.
 
-# 18 files, no impossibilities in 1 directories.
+# 21 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -260,7 +252,7 @@ all:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-02 15:50:33
+#  Last modified 2022-04-02 16:00:59
 #  File has been updated.
 #  Successfully updated.
 
@@ -292,7 +284,6 @@ install:
 #  recipe to execute (from 'Makefile', line 10):
 	git submodule init
 	git submodule update
-	brew install node advancecomp
 	cd js13k-compiler && git checkout master && git pull && npm install && rm package-lock.json
 
 # files hash-table stats:
@@ -303,12 +294,12 @@ install:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 24 / storage = 201 B / avg = 8 B
-# current buf: size = 8162 B / used = 201 B / count = 24 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 238 B / avg = 8 B
+# current buf: size = 8162 B / used = 238 B / count = 27 / avg = 8 B
 
-# strcache performance: lookups = 35 / hit rate = 31%
+# strcache performance: lookups = 38 / hit rate = 28%
 # hash-table stats:
-# Load=24/8192=0%, Rehash=0, Collisions=1/35=3%
-# Finished Make data base on Sat Apr 02 15:59:33 2022
+# Load=27/8192=0%, Rehash=0, Collisions=1/38=3%
+# Finished Make data base on Wed Apr 06 13:31:56 2022
 
  

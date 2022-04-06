@@ -13,12 +13,13 @@
     "ts-jest": "^27.1.4"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage"
   },
   
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
+    "coverageDirectory": "./tests/coverage",
     "transform": {
       "node_modules/variables/.+\\.(j|t)sx?$": "ts-jest"
     },

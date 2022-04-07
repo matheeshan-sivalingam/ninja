@@ -30,6 +30,7 @@ class Player {
         this.previousvX = 0;
         this.previousvY = 0;
         this.pHSpeed = 0;
+
     }
 
     get landed() {
@@ -66,7 +67,7 @@ class Player {
     cycle(e) {
         let remaining = e;
         do {
-            const sub = min(remaining, 1 / 60);
+            const sub = Math.min(remaining, 1 / 60);
             remaining -= sub;
             this.subCycle(sub);
         } while (remaining > 0);
@@ -134,7 +135,6 @@ class Player {
             const gravity = this.sticksToWall && this.vY > 0 ? WALL_GRAVITY_ACCELERATION : GRAVITY_ACCELERATION;
             this.vY = Math.max(0, this.vY + gravity * e);
             if (this.sticksToWall) {
-                
                 this.vY = Math.min(this.vY, WALL_FALL_DOWN_CAP);
                 this.previousvY = this.vY;
 
@@ -147,7 +147,7 @@ class Player {
         
         // Left/right
         let dX = 0, targetVX = 0;
-       
+
         if (INPUT.left()) {
             dX = -1;
             targetVX = -PLAYER_HORIZONTAL_SPEED;
@@ -159,7 +159,6 @@ class Player {
             targetVX = PLAYER_HORIZONTAL_SPEED;
             this.pHSpeed = targetVX;
         }
-
         if (this.landed && dX) {
             this.facing = dX;
         }
@@ -210,7 +209,6 @@ class Player {
                 remove(this.level.renderables, renderable);
             });
         }
-
         if (this.sticksToWall) {
             for (let i = 0 ; i < 10 ; i++) {
                 this.level.particle({
@@ -293,7 +291,7 @@ class Player {
                 'color': '#fff',
                 'duration': rnd(0.4, 0.8),
                 'x': [this.x + rnd(-PLAYER_RADIUS, PLAYER_RADIUS), rnd(-20, 20)],
-                'y': [y, sign(this.y - y) * rnd(15, 10)]
+                'y': [y, Math.sign(this.y - y) * rnd(15, 10)]
             });
         }
 
@@ -323,6 +321,7 @@ class Player {
         if (this.landed) {
             // Landed, reset the jump
             this.vY = Math.min(0, this.vY);
+            
 
             if (!this.previous.landed) {
                 this.dust(this.y + PLAYER_RADIUS);
@@ -351,7 +350,7 @@ class Player {
 
         // Player has landed or is moving horizontally without hitting a wall, stop sticking to a wall
         if (this.landed || this.x != this.previous.x && !hitWall) {
-            this.sticksToWall = 0;
+            this.sticksToWall = false;
         }
 
         // No block on the left or right, cancel wall sticking

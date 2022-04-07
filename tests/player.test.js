@@ -4,6 +4,17 @@ const { limit } = require('./math')
 const { rnd } = require('./math')
 const mockRayCasting = require('../src/js/util/raycasting');
 
+
+afterEach(() => {    
+    jest.clearAllMocks();
+    INPUT = {
+        'jump': () => false,
+        'left': () => false,
+        'right': () => false,
+    };
+  });
+
+  
 //TC1:- Player parameters are initialized correctly  
 it('Check initial value player', () => {
     //Declare and initialize variables
@@ -686,8 +697,6 @@ it('Player x velocity value should be calculated correctly when jumping off a wa
     
     expect(testPlayer.previousvX).toBe(800)
 })
-
-
 
 
 

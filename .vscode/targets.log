@@ -8,7 +8,7 @@ make.exe: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Apr 06 13:31:56 2022
+# Make data base, printed on Thu Apr 07 12:10:51 2022
 
 # Variables
 
@@ -59,7 +59,7 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-3415d730-64b6-4271-9bd4-1424d324126f-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-151cdd19-7b2c-449e-8eb8-ed4609b81679-sock
 # environment
 VS160ENTCOMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\
 # environment
@@ -93,7 +93,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_11792_YYDMHCAEMHAYTYFI
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_4032_JIICSRDQJOTQPMVU
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -215,7 +215,7 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-VSCODE_PID = 11792
+VSCODE_PID = 4032
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-L1EQSIM
 # variable set hash-table stats:
@@ -300,6 +300,6 @@ install:
 # strcache performance: lookups = 38 / hit rate = 28%
 # hash-table stats:
 # Load=27/8192=0%, Rehash=0, Collisions=1/38=3%
-# Finished Make data base on Wed Apr 06 13:31:56 2022
+# Finished Make data base on Thu Apr 07 12:10:51 2022
 
  

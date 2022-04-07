@@ -17,6 +17,7 @@ class Player {
         this.jumpPeakTime = 0;
         this.lastLanded = {'x':0, 'y': 0};
         this.lastWallStick = {'x':0, 'y': 0, 'direction': 0};
+        this.sticksToWall = false;
 
         this.stickingToWallX = 0;
 
@@ -29,6 +30,7 @@ class Player {
         const leftX = this.x - PLAYER_RADIUS;
         const rightX = this.x + PLAYER_RADIUS - 1; // -1 so we can't jump off a wall
         const bottomY = this.y + PLAYER_RADIUS + 1;
+
 
         return hasBlock(leftX, bottomY) || hasBlock(rightX, bottomY);
     }
@@ -48,6 +50,7 @@ class Player {
         if (dist(this, this.lastLanded) > COYOTE_RADIUS && abs(this.x - this.lastWallStick.x) > COYOTE_RADIUS_WALLJUMP) {
             return false;
         }
+        
 
         return true;
     }
@@ -100,6 +103,7 @@ class Player {
             // started, causing bad physics once the jump reaches its peak.
             this.vY = 0;
 
+
             jumpSound();
         }
 
@@ -123,14 +127,9 @@ class Player {
             const gravity = this.sticksToWall && this.vY > 0 ? WALL_GRAVITY_ACCELERATION : GRAVITY_ACCELERATION;
             this.vY = max(0, this.vY + gravity * e);
             if (this.sticksToWall) {
+                console.log(this.sticksToWall);
                 this.vY = min(this.vY, WALL_FALL_DOWN_CAP);
-                console.log("vY wallstick - "+this.vY);
-                console.log("JST - "+this.jumpStartTime);
-                console.log("JPT - "+this.jumpPeakTime);
-                console.log("Clock -"+this.clock)
-                console.log("e - "+e);
             }
-            console.log(this.vY);
             this.y += this.vY * e;
         }
 
@@ -333,9 +332,11 @@ class Player {
             this.sticksToWall = adjustmentDirectionX;
         }
 
+
+
         // Player has landed or is moving horizontally without hitting a wall, stop sticking to a wall
         if (this.landed || this.x != this.previous.x && !hitWall) {
-            this.sticksToWall = 0;
+            this.sticksToWall = false;
         }
 
         // No block on the left or right, cancel wall sticking

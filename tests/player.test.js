@@ -594,8 +594,7 @@ it('Player y velocity is calculated correctly when falling', () => {
     testPlayer.jumpStartTime = 0.27;
     testPlayer.jumpPeakTime = 0.166;
 
-    console.log(this.landed);
-    console.log(this.jumpStartTime)
+
 
     expect(testPlayer.y).toBeCloseTo(110)
 })
@@ -641,9 +640,55 @@ it('Player y value should be calculated corectly when jumping off wall', () => {
     testPlayer.jumpPeakTime = 0.3;
     testPlayer.vY = 12;
     testPlayer.sticksToWall = true;
-
     expect(testPlayer.y).toBeCloseTo(120)
 })
+
+//TC21:- Player x velocity value should be calculated correctly when jumping off a wall
+it('Player x velocity value should be calculated correctly when jumping off a wall', () => {
+    global.Math.random = () => 3;
+    //Define player
+    const testPlayer = new Player(1,1,80);
+
+    PLAYER_RADIUS = Constants.PLAYER_RADIUS;
+    LEVEL_WIDTH = 10;
+    LEVEL_HEIGHT = 10;
+    GRAVITY_ACCELERATION = Constants.GRAVITY_ACCELERATION;
+    PLAYER_HORIZONTAL_FLIGHT_ACCELERATION = Constants.PLAYER_HORIZONTAL_FLIGHT_ACCELERATION
+    PLAYER_HORIZONTAL_FLOOR_ACCELERATION = Constants.PLAYER_HORIZONTAL_FLOOR_ACCELERATION
+    MAX_JUMP_HOLD_TIME = Constants.MAX_JUMP_HOLD_TIME
+
+    CELL_SIZE = Constants.CELL_SIZE
+
+    INPUT = {
+        'jump': () => true,
+        'left': () => false,
+        'right': () => false,
+    };
+    
+    hasBlock = (x, y, radius = 0) => {
+        return true
+    }
+
+    var i = 0;
+
+    jumpSound = () => {
+        i++;
+    }
+
+    easeOutQuad = t => t * (2 - t);
+
+    testPlayer.sticksToWall = true;
+    testPlayer.lastWallStick.direction = 1;
+    jest.spyOn(testPlayer,'subCycle');
+    testPlayer.subCycle(1);
+    
+
+    
+    expect(testPlayer.previousvX).toBe(800)
+})
+
+
+
 
 
 

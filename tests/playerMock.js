@@ -19,10 +19,17 @@ class Player {
         this.lastWallStick = {'x':0, 'y': 0, 'direction': 0};
 
         this.stickingToWallX = 0;
+        this.sticksToWall = false;
 
         this.clock = 0;
 
         this.bandanaTrail = [];
+
+
+        //Additional parameter added for testing purposes
+        this.previousvX = 0;
+        this.previousvY = 0;
+        this.pHSpeed = 0;
     }
 
     get landed() {
@@ -90,10 +97,15 @@ class Player {
             this.jumpReleased = false;
             this.jumpStartY = this.y;
             this.jumpStartTime = this.clock;
+            
 
             if (this.sticksToWall) {
                 this.vX = this.lastWallStick.direction * 800;
+
+                //USED FOR TESTING 
+                this.previousvX = this.vX;
             }
+
 
             // Fixes a walljump issue: vY would keep accumulating even though a new jump was
             // started, causing bad physics once the jump reaches its peak.
@@ -121,25 +133,31 @@ class Player {
             // Fall down
             const gravity = this.sticksToWall && this.vY > 0 ? WALL_GRAVITY_ACCELERATION : GRAVITY_ACCELERATION;
             this.vY = Math.max(0, this.vY + gravity * e);
-
             if (this.sticksToWall) {
+                
                 this.vY = Math.min(this.vY, WALL_FALL_DOWN_CAP);
-            }
+                this.previousvY = this.vY;
 
-            console.log(this.vY);
+
+            }
 
             this.y += this.vY * e;
         }
 
+        
         // Left/right
         let dX = 0, targetVX = 0;
+       
         if (INPUT.left()) {
             dX = -1;
             targetVX = -PLAYER_HORIZONTAL_SPEED;
+            this.pHSpeed = targetVX;
+            
         }
         if (INPUT.right()) {
             dX = 1;
             targetVX = PLAYER_HORIZONTAL_SPEED;
+            this.pHSpeed = targetVX;
         }
 
         if (this.landed && dX) {
@@ -148,6 +166,7 @@ class Player {
         if (this.facing != this.previous.facing) {
             interp(this, 'facingScale', -1, 1, 0.1);
         }
+        
         this.walking = dX;
 
         const horizontalAcceleration = this.landed ? PLAYER_HORIZONTAL_FLOOR_ACCELERATION : PLAYER_HORIZONTAL_FLIGHT_ACCELERATION;
@@ -371,6 +390,8 @@ class Player {
             renderCharacter.apply(null, this.renderCharacterParams);
         });
     }
+
+
 }
 
 module.exports = Player;

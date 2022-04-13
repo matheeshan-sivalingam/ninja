@@ -8,7 +8,7 @@ make.exe: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Apr 07 12:10:51 2022
+# Make data base, printed on Tue Apr 12 21:42:46 2022
 
 # Variables
 
@@ -59,11 +59,11 @@ PROGRAMW6432 = C:\Program Files
 # environment
 PROGRAMDATA = C:\ProgramData
 # environment
-VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-151cdd19-7b2c-449e-8eb8-ed4609b81679-sock
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-f1a4404b-1047-4aa1-9734-98b5d48228b1-sock
 # environment
 VS160ENTCOMNTOOLS = C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\Common7\Tools\
 # environment
-VSCODE_CWD = C:\Users\Matheeshan\AppData\Local\Programs\Microsoft VS Code
+VSCODE_CWD = C:\Users\Matheeshan\AppData\Local\GitHubDesktop\app-2.9.12
 # default
 MAKE_HOST := Windows32
 # environment
@@ -72,6 +72,8 @@ PATH = C:\Python310\Scripts\;C:\Python310\;C:\Program Files\Common Files\Oracle\
 COMMONPROGRAMW6432 = C:\Program Files\Common Files
 # environment
 NIEXTCCOMPILERSUPP = C:\Program Files (x86)\National Instruments\Shared\ExternalCompilerSupport\C\
+# environment
+LC_ALL = C
 # environment
 CHOCOLATEYLASTPATHUPDATE = 132501227852233544
 # environment
@@ -93,7 +95,7 @@ ELECTRON_RUN_AS_NODE = 1
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_4032_JIICSRDQJOTQPMVU
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_20412_VGZDCZFELDDHVPAV
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -115,7 +117,9 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 PT6HOME = C:\Program Files (x86)\Cisco Packet Tracer 6.1sv
 # environment
-VSCODE_CODE_CACHE_PATH = C:\Users\Matheeshan\AppData\Roaming\Code\CachedData\e18005f0f1b33c29e81d732535d8c0e47cafb0b5
+VSCODE_CLI = 1
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\Matheeshan\AppData\Roaming\Code\CachedData\8dfae7a5cd50421d10cd99cb873990460525a898
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -136,6 +140,8 @@ MAKELEVEL := 0
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
+# environment
+LOCAL_GIT_DIRECTORY = C:\Users\Matheeshan\AppData\Local\GitHubDesktop\app-2.9.12\resources\app\git
 # environment
 XILINX = c:\Xilinx
 # environment
@@ -163,7 +169,7 @@ PROCESSOR_IDENTIFIER = AMD64 Family 23 Model 8 Stepping 2, AuthenticAMD
 # environment
 OS = Windows_NT
 # environment
-VSCODE_IPC_HOOK = \\.\pipe\6075536b04660b2678a001a32c6dfd51-1.66.0-main-sock
+VSCODE_IPC_HOOK = \\.\pipe\6075536b04660b2678a001a32c6dfd51-1.66.1-main-sock
 # environment
 HOMEPATH = \Users\Matheeshan
 # environment
@@ -195,7 +201,7 @@ MAKEFILES :=
 # environment
 LMC_HOME = c:\Xilinx\smartmodel\nt\installed_nt
 # environment
-LC_ALL = C
+ELECTRON_NO_ATTACH_CONSOLE = 1
 # automatic
 ^F = $(notdir $^)
 # default
@@ -215,11 +221,11 @@ LANG = C
 # environment
 PROCESSOR_LEVEL = 23
 # environment
-VSCODE_PID = 4032
+VSCODE_PID = 20412
 # environment
 USERDOMAIN_ROAMINGPROFILE = DESKTOP-L1EQSIM
 # variable set hash-table stats:
-# Load=103/1024=10%, Rehash=0, Collisions=15/125=12%
+# Load=106/1024=10%, Rehash=0, Collisions=17/128=13%
 
 # Pattern-specific Variable Values
 
@@ -227,7 +233,7 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-L1EQSIM
 
 # Directories
 
-# . (key d:/Projects/ninja, mtime 1649219835): 21 files, no impossibilities.
+# . (key d:/Projects/ninja, mtime 1649363463): 21 files, no impossibilities.
 
 # 21 files, no impossibilities in 1 directories.
 
@@ -300,6 +306,6 @@ install:
 # strcache performance: lookups = 38 / hit rate = 28%
 # hash-table stats:
 # Load=27/8192=0%, Rehash=0, Collisions=1/38=3%
-# Finished Make data base on Thu Apr 07 12:10:51 2022
+# Finished Make data base on Tue Apr 12 21:42:46 2022
 
  

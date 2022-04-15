@@ -9,6 +9,9 @@ The goal is to scale a tower to find the evil plans without getting spotted.
 
 Levels were designed to offer obvious routes, as well as more difficult alternate routes, and a timer to allow speed running.
 
+## NOTE
+If a pull request does not work, pull from the origin and move the test folder to the root folder
+
 ## Building
 
 ```sh
